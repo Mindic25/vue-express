@@ -5,44 +5,44 @@ const mongoose = require('mongoose');
 const GoalkeeperSchema = new mongoose.Schema({ 
 
 
-    
-        Physiological: {
-                Height: Number,
-                Strengh: Number,
-                Power: Number,
-                Agility: Number,
-                Coordination: Number,
-                Reaction_Time: Number,
-                
-        },
-        Tactical: {
+        
+      /*  Physiological */
 
-                Vision: Number,
-                Organisation: Number,
-                Communication: Number,
-                Distribution: Number
-        },
-        Technical_Def: {
-                Shot_stopping: Number,
-                Coordination: Number,
-                Recovery: Number,
-                Speed: Number,
-                Save: Number,
-                Punch: Number
-        },
-        Technical_Att: {
-                Passing: Number,
-                Throw: Number,
-                Ball_control_with_feet: Number,
-                Kick: Number,
-                Tackle: Number
-        },
-        Psychological: {
-                Concentration: Number,
-                Motivation: Number,
-                Attitude: Number,
-                Body_Language: Number
-        },
+                strengh: [Number],
+                power: [Number],
+                agility: [Number],
+                coordination: [Number],
+                reaction_time: [Number],
+                
+        
+     /*   Tactical */
+
+                vision: [Number],
+                organisation: [Number],
+                communication: [Number],
+                distribution: [Number],
+        
+      /*  Technical_Def */
+                shot_stopping: [Number],
+                coordination: [Number],
+                recovery: [Number],
+                speed: [Number],
+                saves: [Number],
+                punch: [Number],
+        
+       /*  Technical_Att */
+                passing: [Number],
+                throw: [Number],
+                ball_control_with_feet: [Number],
+                kick: [Number],
+                tackle: [Number],
+
+      /*  Psychological */
+                concentration: [Number],
+                motivation: [Number],
+                attitude: [Number],
+                body_Language: [Number]
+        
 
 
 });

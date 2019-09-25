@@ -3,44 +3,42 @@ const mongoose = require('mongoose');
 
 
 const AttackMidSchema = new mongoose.Schema({ 
+        _id: mongoose.Schema.Types.ObjectId,
+     //   profile: {type: mongoose.Schema.ObjectId, ref: 'Profile', required: true},
+ /* physiology  */              
+                stamina: [Number],
+                strength: [Number],
+                power: [Number],
+                speed: [Number],
+         
+/* Tactical */
+                vision: [Number],
+                organisation: [Number],
+                communication: [Number],
+   
+/* Technical_Def */
+                tackle: [Number],
+                pressing_opposition: [Number],
+                interception_anticipation: [Number],
+                def_heading: [Number],
 
-
-        Physiological: {
-                Stamina: [Number],
-                Strengh: [Number],
-                Power: [Number],
-                Speed: [Number]
-                },
-        Tactical: {
-                Vision: [Number],
-                Organisation: [Number],
-                Communication: [Number]
-
-        },
-        Technical_Def: {
-                Tackle: [Number],
-                Pressing_opposition: [Number],
-                Interception_anticipation: [Number],
-                Heading: [Number]
-
-        },
-        Technical_Att: {
-                Passing: [Number],
-                Running_with_the_ball: [Number],
-                Ball_control_with_feet: [Number],
-                Dribbling: [Number],
-                Support_play: [Number],
-                Crossing: [Number],
-                Shooting: [Number],
-                Heading: [Number],
-        },
-        Psychological: {
-                Concentration: [Number],
-                Motivation: [Number],
-                Attitude: [Number],
-                Body_Language: [Number]
-        },
+/*  Technical_Att */
+                passing: [Number],
+                running_with_the_ball: [Number],
+                ball_control_with_feet: [Number],
+                dribbling: [Number],
+                support_play: [Number],
+                crossing: [Number],
+                shooting: [Number],
+                off_heading: [Number],
+        
+/*Psychological */
+                concentration: [Number],
+                motivation: [Number],
+                attitude: [Number],
+                body_Language: [Number]
+        
 
 });
-        const AttackMidd = mongoose.model("AttackMidd", AttackMidSchema)
-module.exports = AttackMidd
+        const AttackMidfield = mongoose.model("AttackMidfield", AttackMidSchema)
+module.exports = AttackMidfield

@@ -1,5 +1,5 @@
 var Goalkeeper= require('../models/goalKeeper');
-var AttackMidd = require('../models/attackMidfield');
+var AttackMidFielder = require('../models/attackMidfield');
 var CenterBack = require('../models/centerBack');
 var Fullback = require('../models/fullBack');
 var HoldMid = require('../models/holdMidfielder');
@@ -29,9 +29,12 @@ let profileSchema = new mongoose.Schema({
                         message: '{VALUE} is not a valid phone number!'
                 }
          },
+
+        
+         
          
         /* Case GoalKeeper */
-         keeperHeight : {type: mongoose.Schema.Types.Number, ref: 'Goalkeeper.Physiological.Height'},
+       /*  keeperHeight : {type: mongoose.Schema.Types.Number, ref: 'Goalkeeper.Physiological.Height'},
          keeperStrength : {type: mongoose.Schema.Types.Array, ref: 'Goalkeeper.Physiological.Strength'},
          keeperPower : {type: mongoose.Schema.Types.Array, ref: 'Goalkeeper.Physiological.Power'},
          keeperAgility : {type: mongoose.Schema.Types.Array, ref: 'Goalkeeper.Physiological.Agility'},
@@ -59,13 +62,26 @@ let profileSchema = new mongoose.Schema({
          keeperConcentration : {type: mongoose.Schema.Types.Array, ref: 'Goalkeeper.Psychological.Concentration'},
          keeperMotivation : {type: mongoose.Schema.Types.Array, ref: 'Goalkeeper.Psychological.Motivation'},
          keeperAttitude : {type: mongoose.Schema.Types.Array, ref: 'Goalkeeper.Psychological.Attitude'},
-         keeperBodyLangauge : {type: mongoose.Schema.Types.Array, ref: 'Goalkeeper.Psychological.Body_language'},
+         keeperBodyLangauge : {type: mongoose.Schema.Types.Array, ref: 'Goalkeeper.Psychological.Body_language'}, */
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+         
 
          /* Case AttackingMidfield */
-         AttackMidstamina : {type: mongoose.Schema.Types.Number, ref: 'AttackMidd.Physiological.Stamina'},
+        /* AttackMidstamina : {type: mongoose.Schema.Types.Number, ref: 'AttackMidd.Physiological.Stamina'},
          AttackMidStrength : {type: mongoose.Schema.Types.Array, ref: 'AttackMidd.Physiological.Strength'},
          AttackMidPower : {type: mongoose.Schema.Types.Array, ref: 'AttackMidd.Physiological.Power'},
          AttackMidSpeed : {type: mongoose.Schema.Types.Array, ref: 'AttackMidd.Physiological.Speed'},
@@ -91,11 +107,11 @@ let profileSchema = new mongoose.Schema({
          AttackMidConcentration : {type: mongoose.Schema.Types.Array, ref: 'AttackMidd.Pschological.Concentration'},
          AttackMidMotivation : {type: mongoose.Schema.Types.Array, ref: 'AttackMidd.Pschological.Motivation'},
          AttackMidAttitude : {type: mongoose.Schema.Types.Array, ref: 'AttackMidd.Pschological.Attitude'},
-         AttackMidBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'AttackMidd.Pschological.Body_Language'},
+         AttackMidBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'AttackMidd.Pschological.Body_Language'}, */
 
 
         /* Case CenterBacks */
-        CenterBackstamina : {type: mongoose.Schema.Types.Number, ref: 'CenterBack.Physiological.Stamina'},
+      /*  CenterBackstamina : {type: mongoose.Schema.Types.Number, ref: 'CenterBack.Physiological.Stamina'},
         CenterBackStrength : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Physiological.Strength'},
         CenterBackPower : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Physiological.Power'},
         CenterBackSpeed : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Physiological.Speed'},
@@ -124,10 +140,10 @@ let profileSchema = new mongoose.Schema({
         CenterBackConcentration : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Concentration'},
         CenterBackMotivation : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Motivation'},
         CenterBackAttitude : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Attitude'},
-        CenterBackBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Body_Language'},
+        CenterBackBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Body_Language'}, */
 
                 /* Case CenterBacks */
-        CenterBackstamina : {type: mongoose.Schema.Types.Number, ref: 'CenterBack.Physiological.Stamina'},
+     /*   CenterBackstamina : {type: mongoose.Schema.Types.Number, ref: 'CenterBack.Physiological.Stamina'},
         CenterBackStrength : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Physiological.Strength'},
         CenterBackPower : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Physiological.Power'},
         CenterBackSpeed : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Physiological.Speed'},
@@ -156,10 +172,10 @@ let profileSchema = new mongoose.Schema({
         CenterBackConcentration : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Concentration'},
         CenterBackMotivation : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Motivation'},
         CenterBackAttitude : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Attitude'},
-        CenterBackBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Body_Language'},
+        CenterBackBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'CenterBack.Pschological.Body_Language'}, */
 
         /* Case FullBacks */
-        FullBackstamina : {type: mongoose.Schema.Types.Number, ref: 'FullBack.Physiological.Stamina'},
+       /* FullBackstamina : {type: mongoose.Schema.Types.Number, ref: 'FullBack.Physiological.Stamina'},
         FullBackPower : {type: mongoose.Schema.Types.Array, ref: 'FullBack.Physiological.Power'},
         FullBackSpeed : {type: mongoose.Schema.Types.Array, ref: 'FullBack.Physiological.Speed'},
 
@@ -186,11 +202,11 @@ let profileSchema = new mongoose.Schema({
         FullBackConcentration : {type: mongoose.Schema.Types.Array, ref: 'FullBack.Pschological.Concentration'},
         FullBackMotivation : {type: mongoose.Schema.Types.Array, ref: 'FullBack.Pschological.Motivation'},
         FullBackAttitude : {type: mongoose.Schema.Types.Array, ref: 'FullBack.Pschological.Attitude'},
-        FullBackBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'FullBack.Pschological.Body_Language'},
+        FullBackBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'FullBack.Pschological.Body_Language'}, */
 
 
         /* Case HoldMidfier */
-        HoldMidFieldstamina : {type: mongoose.Schema.Types.Number, ref: ' HoldMidField.Physiological.Stamina'},
+     /*   HoldMidFieldstamina : {type: mongoose.Schema.Types.Number, ref: ' HoldMidField.Physiological.Stamina'},
         HoldMidFieldPower : {type: mongoose.Schema.Types.Array, ref: ' HoldMidField.Physiological.Power'},
         HoldMidFieldSpeed : {type: mongoose.Schema.Types.Array, ref: ' HoldMidField.Physiological.Speed'},
         HoldMidFieldStrength : {type: mongoose.Schema.Types.Array, ref: ' HoldMidField.Physiological.strength'},
@@ -221,11 +237,11 @@ let profileSchema = new mongoose.Schema({
         HoldMidFieldConcentration : {type: mongoose.Schema.Types.Array, ref: ' HoldMidField.Pschological.Concentration'},
         HoldMidFieldMotivation : {type: mongoose.Schema.Types.Array, ref: ' HoldMidField.Pschological.Motivation'},
         HoldMidFieldAttitude : {type: mongoose.Schema.Types.Array, ref: ' HoldMidField.Pschological.Attitude'},
-        HoldMidFieldBodyLanguage : {type: mongoose.Schema.Types.Array, ref: ' HoldMidField.Pschological.Body_Language'},
+        HoldMidFieldBodyLanguage : {type: mongoose.Schema.Types.Array, ref: ' HoldMidField.Pschological.Body_Language'}, */
 
 
         /* Case  Striker*/
-        Strikerstamina : {type: mongoose.Schema.Types.Number, ref: ' Striker.Physiological.Stamina'},
+      /*  Strikerstamina : {type: mongoose.Schema.Types.Number, ref: ' Striker.Physiological.Stamina'},
         StrikerPower : {type: mongoose.Schema.Types.Array, ref: ' Striker.Physiological.Power'},
         StrikerSpeed : {type: mongoose.Schema.Types.Array, ref: ' Striker.Physiological.Speed'},
         StrikerStrength : {type: mongoose.Schema.Types.Array, ref: ' Striker.Physiological.strength'},
@@ -259,11 +275,11 @@ let profileSchema = new mongoose.Schema({
         StrikerConcentration : {type: mongoose.Schema.Types.Array, ref: ' Striker.Pschological.Concentration'},
         StrikerMotivation : {type: mongoose.Schema.Types.Array, ref: ' Striker.Pschological.Motivation'},
         StrikerAttitude : {type: mongoose.Schema.Types.Array, ref: ' Striker.Pschological.Attitude'},
-        StrikerBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'Striker.Pschological.Body_Language'},
+        StrikerBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'Striker.Pschological.Body_Language'}, */
 
 
         /* Case WideMidfielder*/
-        WideMidfieldstamina : {type: mongoose.Schema.Types.Number, ref: ' WideMidfield.Physiological.Stamina'},
+      /*  WideMidfieldstamina : {type: mongoose.Schema.Types.Number, ref: ' WideMidfield.Physiological.Stamina'},
         WideMidfieldPower : {type: mongoose.Schema.Types.Array, ref: ' WideMidfield.Physiological.Power'},
         WideMidfieldSpeed : {type: mongoose.Schema.Types.Array, ref: ' WideMidfield.Physiological.Speed'},
         WideMidfieldStrength : {type: mongoose.Schema.Types.Array, ref: ' WideMidfield.Physiological.strength'},
@@ -297,72 +313,10 @@ let profileSchema = new mongoose.Schema({
         WideMidfieldConcentration : {type: mongoose.Schema.Types.Array, ref: ' WideMidfield.Pschological.Concentration'},
         WideMidfieldMotivation : {type: mongoose.Schema.Types.Array, ref: ' WideMidfield.Pschological.Motivation'},
         WideMidfieldAttitude : {type: mongoose.Schema.Types.Array, ref: ' WideMidfield.Pschological.Attitude'},
-        WideMidfieldBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'WideMidfield.Pschological.Body_Language'},
+        WideMidfieldBodyLanguage : {type: mongoose.Schema.Types.Array, ref: 'WideMidfield.Pschological.Body_Language'}, */
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-         
-         
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
-         /*  goalkeeper : {type: mongoose.Schema.Types.ObjectId, ref: 'Goalkeeper'},
-         attackmid : {type: mongoose.Schema.Types.ObjectId, ref: 'AttackMidd'},
-         centerback : {type: mongoose.Schema.Types.ObjectId, ref: 'CenterBack'},
-         fullback : {type: mongoose.Schema.Types.ObjectId, ref: 'Fullback'},
-         holdmid : {type: mongoose.Schema.Types.ObjectId, ref: 'HoldMid'},
-         striker : {type: mongoose.Schema.Types.ObjectId, ref: 'Striker'},
-         widemid : {type: mongoose.Schema.Types.ObjectId, ref: 'WideMide'} */
-       
-
-       
-               
-               
 });
 
 module.exports = mongoose.model('Profile', profileSchema)

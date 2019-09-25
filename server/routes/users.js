@@ -1,119 +1,40 @@
 var express = require('express');
 var router = express.Router();
-const mongoose = require('mongoose');
-const Profile = require('../models/profile');
+//const mongoose = require('mongoose');
+//const Profile = require('../models/profile');
 
 
+let profileController = require('../controllers/profile');
 
 
-
-
-
-
-
-/* GET */
-router.get('/', (req, res, next) => {
-      Profile.find()
-      .select(' _id first last DOB phone')
-      .exec()
-      .then(docs => {
-        const response = {
-          count: docs.length,
-          profiles :docs
-        }
-        //console.log(docs);
-        res.status(200).json(response);
-      })
-      .catch(err => {
-        console.log(err);
-        res.status(500).json({
-          error: err
-        });
-      }) 
-
-});
-
+/* GET All Profile*/
+router.get("/", profileController.profileAll);
 
 /* GET a single Profile*/     
-router.get('/:profileID', (req, res, next) => {
-         const id = req.params.profileID;
-         Profile.findById(id)
-         .exec()
-         .then(docs => {
-          res.status(200).json(docs);
-        })
-         .catch(err => {
-          console.log(err);
-          res.status(500).json({
-            error: err 
-          })
-        });
-
-});
+router.get('/:profileID', profileController.profileone);
 
 
 /* POST */
-router.post('/', (req, res, next) => {
+router.post('/', profileController.profilepost);
+router.post('/:profileID/attackmidfield',profileController.attackmidpost);
+router.post('/:profileID/centerback',profileController.centerbackpost,);
+router.post('/:profileID/fullback',profileController.fullbackpost);
+router.post('/:profileID/goalkeeper',profileController.goalkeeperpost);
+router.post('/:profileID/holdmidfield',profileController.holdmidfieldpost);
+router.post('/:profileID/striker',profileController.strikerpost);
+router.post('/:profileID/widemidfield',profileController.widemidfielderpost);
 
-    var newProfile = new Profile({
-    _id: new mongoose.Types.ObjectId(),
-   first: req.body.first,
-    last: req.body.last,
-    DOB: req.body.DOB,
-    number: req.body.number,
-  
-  
-    keeperHeight :req.body.keeperHeight
 
-   });
-   
 
-   newProfile.save().then(result => {
-    console.log(result);
-  })
-  .catch(err => console.log(err));
-  res.status(201).json({
-    message: 'Handling POST requests....',
-    createdProfile: newProfile 
-  
-  }); 
-});
+
+
+
 
 /* DELETE */
-router.delete('/:profileID', (req, res, next) => {
-           
-       const id = req.params.profileID;
-       Profile.remove({_id : id})
-       .exec()
-       .then(result => {
-         res.status(200).json(result);
-       })
-       .catch(err => {
-         console.log(err);
-         res.status(500).json({
-           error: err 
-         })
-       });
-})
+router.delete('/:profileID', profileController.profiledelete);
 
 /*  UPDATE */
-router.patch('/:profileID', (req, res, next) => {
-  const id = req.params.profileID;
-  const updateOps = {};
-  for (const ops of req.body) {
-    updateOps[ops.propName] = ops.value;
-  }
-  Profile.update({_id : id}, { $set: updateOps })
-  .exec()
-  .then(result => {
-    res.status(200).json(result);
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json({
-      error: err 
-    })
-  });
-});
+router.patch('/:profileID', profileController.profilepatch);
+
 
 module.exports = router;
