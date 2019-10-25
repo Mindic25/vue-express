@@ -4,11 +4,24 @@ const mongoose = require('mongoose');
 
 const FullbackSchema = new mongoose.Schema({ 
 
-      
+        _id: mongoose.Schema.Types.ObjectId,
+
+        first: String,
+        last:  String,
+        DOB: Date,
+        number: {
+                type: String,
+                validate: {
+                        validator: function (v) {
+                                return /\d{3}-\d{3}-\d{4}/.test(v);
+                        },
+                        message: '{VALUE} is not a valid phone number!'
+                }
+         },
        /* Physiological*/ 
-                Speed: [Number],
-                Stamina: [Number],
-                Power: [Number],
+                speed: [Number],
+                stamina: [Number],
+                power: [Number],
 
         
         /*Tactical*/ 
@@ -19,7 +32,7 @@ const FullbackSchema = new mongoose.Schema({
                 forcing_offside: [Number],
         
        /* Technical_Def*/ 
-                Tackle: [Number],
+                tackle: [Number],
                 pressing_opposition: [Number],
                 interception_anticipation: [Number],
                 clearance: [Number],

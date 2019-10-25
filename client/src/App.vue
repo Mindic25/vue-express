@@ -1,23 +1,13 @@
 <template>
   <div id="app">
      <mdb-container fluid>
-       <mdb-row>
-         <mdb-col>
-           <Bar/>
-         </mdb-col>
-     </mdb-row>  
-    <mdb-row>
-         <mdb-col>
+
+        <mdb-row>
+
            <router-view/>
 
-            </mdb-col>
-     </mdb-row> 
-     <mdb-row >
-         <mdb-col>
-          <FooterPage/>
-        </mdb-col>
-     </mdb-row> 
-       
+        </mdb-row> 
+       <FooterPage/>
      </mdb-container>
      
   </div>
@@ -32,6 +22,8 @@ import Bar from "@/components/Bar";
 import FooterPage from "@/components/Footer";
 import Dashboard from "@/components/Dashboard";
 import BadGateway from "@/components/BadGateway";
+import CenterBack from "@/components/CenterBack";
+import MenuPage from "@/components/MenuPage";
 
 export default {
   name: "App",
@@ -43,7 +35,9 @@ export default {
     mdbRow,
     mdbCol,
     Dashboard,
-    BadGateway
+    BadGateway,
+    CenterBack,
+    MenuPage
   }
 };
 </script>

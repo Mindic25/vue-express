@@ -1,143 +1,107 @@
 <template>
-  <div class="classic-form-page ">
-  <view-wrapper>
-      <mdb-mask class="d-flex gradient justify-content-center align-items-center">
-        <mdb-container>
+  <div class="video-background-page"> 
+    <mdb-navbar style="margin-top: 0px" color="primary" position="top" dark href="#" transparent scrolling>
+      <mdb-container>
+        <mdbNavbarBrand href="#"><strong>MDB</strong></mdbNavbarBrand>
+        <mdb-navbar-toggler style="max-width: 1140px">
+          <mdb-navbar-nav left>
+            <mdb-nav-item href="#" waves-fixed>Home</mdb-nav-item>
+            <mdb-nav-item href="#" waves-fixed>About</mdb-nav-item>
+            <mdb-nav-item href="#" waves-fixed>Features</mdb-nav-item>
+            <mdb-nav-item href="#" waves-fixed>Services</mdb-nav-item>
+            <mdb-nav-item href="#" waves-fixed>Opinions</mdb-nav-item>
+            <mdb-nav-item href="#" waves-fixed>Team</mdb-nav-item>
+            <mdb-nav-item href="#" waves-fixed>Contact</mdb-nav-item>
+          </mdb-navbar-nav>
+          
+        </mdb-navbar-toggler>
+      </mdb-container>
+    </mdb-navbar>
+
+    <view-wrapper src="https://mdbootstrap.com/img/video/animation.mp4" video>
+      <mdb-mask class="d-flex justify-content-center align-items-center gradient">
+        <mdb-container class="px-md-1 px-sm-0" style="margin-left:160px">
           <mdb-row>
-            <div class="indigo-text text-center text-md-left col-md-6 mt-xl-5 mb-5">
-              <h1 class="h1-responsive font-weight-bold animated fadeInLeft">Sign up right now! </h1>
-              <hr class="hr-light animated fadeInLeft"/>
-              <h6 class="mb-4 animated fadeInLeft">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem repellendus quasi fuga nesciunt dolorum nulla magnam veniam sapiente, fugiat! Commodi sequi non animi ea dolor molestiae, quisquam iste, maiores. Nulla.</h6>
-              <mdb-btn outline="indigo animated fadeInLeft" color="white">Learn More</mdb-btn>
-            </div>
-            <mdb-col md="6" xl="5" class="mb-4 animated fadeInRight">
-              <mdb-card id="classic-card">
-                <mdb-card-body class="z-depth-2 white-text">
-                  <h3 class="text-center"><mdb-icon icon="user"/> Register:</h3>
-                  <hr class="hr-light"/>
-                  <mdb-input label="Your name" labelColor="white" icon="user"/>
-                  <mdb-input label="Your email" labelColor="white" icon="envelope"/>
-                  <mdb-input label="Your password" labelColor="white" icon="lock" type="password"/>
-                  <div class="text-center mt-4 black-text">
-                    <mdb-btn color="indigo">Sign Up</mdb-btn>
-                    <hr class="hr-light"/>
-                    <div class="text-center d-flex justify-content-center white-label">
-                      <a class="p-2 m-2">
-                        <mdb-icon fab icon="twitter" class="white-text"/>
-                      </a>
-                      <a class="p-2 m-2">
-                        <mdb-icon fab icon="linkedin" class="white-text"/>
-                      </a>
-                      <a class="p-2 m-2">
-                        <mdb-icon fab icon="instagram" class="white-text"/>
-                      </a>
-                    </div>
-                  </div>
-                </mdb-card-body>
-              </mdb-card>
+            <mdb-col md="7" class="mb-3 white-text text-center animated fadeIn">
+              <h3 class="display-3 font-weight-bold mb-0 pt-md-5 ">Creative Agency </h3>
+              <hr class="hr-light my-4 w-75 "/>
+              <h4 class="subtext-header mt-2 mb-4" >Lorem ipsum dolor sit amet, consectetur adipisicing elit deleniti consequuntur nihil.</h4>
+              <mdb-btn tag="a" role="button" outline="white" rounded color="white"><mdb-icon icon="home"/><router-link to="/registerlogin"> Visit us</router-link></mdb-btn>
             </mdb-col>
           </mdb-row>
         </mdb-container>
       </mdb-mask>
     </view-wrapper>
+
+   
   </div>
 </template>
-
-
-
 <script>
 import {
   mdbContainer,
   mdbRow,
   mdbCol,
+  ViewWrapper,
+  mdbMask,
+  mdbBtn,
+  mdbIcon,
   mdbNavbar,
   mdbNavItem,
   mdbNavbarNav,
   mdbNavbarToggler,
-  ViewWrapper,
-  mdbMask,
-  mdbBtn,
-  mdbCard,
-  mdbCardBody,
-  mdbInput,
-  mdbIcon,
-  mdbNavbarBrand
+  mdbNavbarBrand,
+  mdbCard
 } from "mdbvue";
-
 export default {
-  name: "ClassicFormPage",
+  name: "VideoBackgroundPage",
   components: {
     mdbContainer,
     mdbRow,
     mdbCol,
+    ViewWrapper,
+    mdbMask,
+    mdbBtn,
+    mdbIcon,
     mdbNavbar,
     mdbNavItem,
     mdbNavbarNav,
     mdbNavbarToggler,
-    ViewWrapper,
-    mdbMask,
-    mdbBtn,
-    mdbCard,
-    mdbCardBody,
-    mdbInput,
-    mdbIcon,
-    mdbNavbarBrand
+    mdbNavbarBrand,
+    mdbCard
   }
 };
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-.classic-form-page .view {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: calc(100vh - 150px);
-  bottom: -24px;
-  margin-left: -13px;
-  margin-right: -13px;
-}
-
-.classic-form-page .gradient {
+<style>
+.video-background-page .gradient {
+  background: -moz-linear-gradient(
+    45deg,
+    rgba(75, 255, 59, 0.7),
+    rgba(56, 198, 13, 0.69) 100%
+  );
   background: -webkit-linear-gradient(
     45deg,
-    rgba(3, 169, 244, 0.7),
-    rgba(96, 125, 139, 0.1) 100%
+    rgba(15, 213, 187, 0.6),
+    rgba(13, 198, 173, 0.69) 100%
   );
   background: linear-gradient(
     45deg,
-    rgba(96, 125, 139, 0.3),
-    rgba(255, 235, 59, 0.1) 100%
+    rgba(15, 213, 203, 0.6),
+    rgba(13, 198, 127, 0.644) 100%
   );
 }
 
-.classic-form-page .card {
-  background-color: #ffc107;
+.video-background-page .view video {
+  top: 0 !important;
+  left: 0 !important;
+  transform: none !important;
+  height: calc(110vh - 70px);
 }
 
-.classic-form-page h6 {
-  line-height: 1.7;
-}
-
-.classic-form-page .navbar {
+.video-background-page .navbar {
   transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
 }
 
-.classic-form-page .navbar .md-form {
-  margin: 0;
-}
-
 .top-nav-collapse {
-  background: #424f95 !important;
-}
-
-@media (max-width: 768px) {
-  .classic-form-page .navbar:not(.top-nav-collapse) {
-    background: #424f95 !important;
-  }
-}
-
-.classic-form-page label {
-  color: #fff !important;
+  background-color: #563e91 !important;
 }
 </style>
